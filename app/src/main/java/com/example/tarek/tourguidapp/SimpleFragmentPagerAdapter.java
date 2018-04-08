@@ -78,20 +78,4 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
         images.recycle(); //Many resources, such as TypedArrays, VelocityTrackers, etc., should be recycled (with a recycle() call) after use. This lint check looks for missing recycle() calls
     }
 
-    /**
-     * used if no address or description
-     *
-     * @param nameResource
-     * @param imagesResources
-     */
-    public void setArray(int nameResource, int imagesResources) {
-        String[] names = mContext.getResources().getStringArray(nameResource);
-        final TypedArray images = mContext.getResources().obtainTypedArray(imagesResources);
-        for (int i = 0; i < names.length; i++) {
-            locations.add(new Location(names[i], null, null, images.getResourceId(i, -1)));
-        }
-        images.recycle(); //Many resources, such as TypedArrays, VelocityTrackers, etc., should be recycled (with a recycle() call) after use. This lint check looks for missing recycle() calls
-    }
-
-
 }

@@ -25,7 +25,8 @@
 
         <TextView
             android:id="@+id/category_item_text_description"
-            style="@style/text_style" />
+            style="@style/text_style"
+            android:paddingBottom="@dimen/margin_value" />
     </ScrollView>
 
 

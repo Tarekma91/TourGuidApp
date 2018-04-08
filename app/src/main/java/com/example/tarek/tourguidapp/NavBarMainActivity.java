@@ -37,8 +37,10 @@ public class NavBarMainActivity extends AppCompatActivity
         setContentView(R.layout.activity_category_items);
         ButterKnife.bind(this);
 
+
         setNavBar();
         getComingIntents();
+        getSupportActionBar().setTitle(currentCategory); // after get coming intent which have currentCategory
         buildRecycleView();
     }
 
