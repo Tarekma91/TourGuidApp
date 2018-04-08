@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="historical_images">
+        <item>@drawable/egypt_cairo_pyramids_of_giza</item>
+        <item>@drawable/egypt_luxor_karnak_temple_at_night</item>
+        <item>@drawable/abu_simbel</item>
+        <item>@drawable/luxor_temple</item>
+        <item>@drawable/temple_of_hatshepsut</item>
+        <item>@drawable/temple_of_seti_i</item>
+        <item>@drawable/temple_of_edfu</item>
+        <item>@drawable/philae_temples</item>
+        <item>@drawable/colossi_of_memnon</item>
+        <item>@drawable/temple_of_kom_ombo</item>
+        <item>@drawable/memphis</item>
+    </array>
+
+    <array name="museums_images">
+        <item>@drawable/egyptian_museum</item>
+        <item>@drawable/cairoislamicmuseum</item>
+        <item>@drawable/coptmuseum15</item>
+        <item>@drawable/alexnationalmuseum1</item>
+        <item>@drawable/abdeen</item>
+        <item>@drawable/agmuseum1</item>
+    </array>
+
+    <array name="restaurants_images">
+        <item>@drawable/sequoia</item>
+        <item>@drawable/taboula</item>
+    </array>
+
+
+    <array name="islamics_images">
+        <item>@drawable/egypt_cairo_al_azhar_mosque</item>
+        <item>@drawable/egypt_cairo_perfume_shop_in_khan_el_khalili</item>
+        <item>@drawable/egypt_cairo_muhammad_ali_mosque_on_the_citadel</item>
+        <item>@drawable/egypt_cairo_sultan_hassan_mosque</item>
+        <item>@drawable/egypt_cairo_view_from_the_top_of_bab_zuweila</item>
+        <item>@drawable/egypt_cairo_ibn_tulun_mosque</item>
+        <item>@drawable/egypt_cairo_mosque_of_al_hakim</item>
+    </array>
+
+    <array name="copts_images">
+        <item>@drawable/slide_coptic_cemetery_780x209</item>
+        <item>@drawable/egypt_aswan_monastery_of_st_simeon_coptic</item>
+        <item>@drawable/hanging_church</item>
+        <item>@drawable/slide_coptic_cemetery_780x209</item>
+    </array>
+
+    <array name="beaches_images">
+        <item>@drawable/marsa_alam_1635x915</item>
+        <item>@drawable/matroh_1635x915</item>
+        <item>@drawable/sharm_1635x915</item>
+        <item>@drawable/hurghada_1635x915</item>
+        <item>@drawable/sokhna_1635x915</item>
+        <item>@drawable/alex_1635x915</item>
+        <item>@drawable/egypt_alexandria</item>
+        <item>@drawable/ras_shitan</item>
+        <item>@drawable/island_of_the_pharoah</item>
+    </array>
+
+    <array name="natural_places_images">
+        <item>@drawable/wadi_el_rayan</item>
+        <item>@drawable/gabal_dakrour</item>
+        <item>@drawable/snorkeling</item>
+        <item>@drawable/fjord</item>
+        <item>@drawable/island_of_the_pharoah</item>
+        <item>@drawable/ras_shitan</item>
+        <item>@drawable/whales_valley</item>
+        <item>@drawable/colored_canyon</item>
+    </array>
+</resources>
