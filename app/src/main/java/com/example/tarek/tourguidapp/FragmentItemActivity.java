@@ -20,7 +20,7 @@ public class FragmentItemActivity extends Fragment {
     ImageView locationImage;
     @BindView(R.id.location_name)
     TextView locationName;
-    @BindView(R.id.id_text)
+    @BindView(R.id.location_address)
     TextView locationAddress;
     @BindView(R.id.category_item_text_description)
     TextView locationDescription;

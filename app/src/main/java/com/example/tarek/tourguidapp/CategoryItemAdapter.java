@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,13 +29,11 @@ public class CategoryItemAdapter extends ArrayAdapter<CategoryItem> {
         if (rootView == null) {
             // inflate the layout
             LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
-            rootView = inflater.inflate(R.layout.image_text_h_layout, parent, false);
+            rootView = inflater.inflate(R.layout.item_list_view, parent, false);
 
             //link views by viewHolder
             viewHolderItem = new ViewHolderItem();
-            viewHolderItem.categoryName = rootView.findViewById(R.id.id_text);
-            viewHolderItem.categoryImageId = rootView.findViewById(R.id.id_image);
-
+            viewHolderItem.categoryName = rootView.findViewById(R.id.id_item_text);
             rootView.setTag(viewHolderItem);
 
         } else {
@@ -45,7 +42,7 @@ public class CategoryItemAdapter extends ArrayAdapter<CategoryItem> {
         CategoryItem category = getItem(position);
 
         viewHolderItem.categoryName.setText(category.getCategoryName());
-        viewHolderItem.categoryImageId.setImageResource(category.getCategoryImageResourceID());
+        viewHolderItem.categoryName.setCompoundDrawablesWithIntrinsicBounds(category.getCategoryImageResourceID(), 0, 0, 0);
 
         return rootView;
     }
@@ -53,6 +50,5 @@ public class CategoryItemAdapter extends ArrayAdapter<CategoryItem> {
 
     public static class ViewHolderItem {
         TextView categoryName;
-        ImageView categoryImageId;
     }
 }

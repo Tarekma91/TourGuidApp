@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,14 +45,15 @@ public class NavBarMainActivity extends AppCompatActivity
         buildRecycleView();
     }
 
+
     /**
      * to destroy the activity if switched to another one (onPause state) because if screen rotated there is no data
      * but now if rotated it go back to main activity
      */
     @Override
-    protected void onStop() {
-        super.onStop();
-        finish();
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getBaseContext(), "onPause", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -98,7 +100,7 @@ public class NavBarMainActivity extends AppCompatActivity
             currentCategory = item.getTitle().toString(); // to get current category
             // resend intent to this activity to show choose category fragments
             // and it doesn't depends on id clicked item because it gets current category depending on clicked item then show it.
-            sendIntentToLocationItemsActivity();
+            sendIntentToNavBarMainActivity();
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -145,9 +147,9 @@ public class NavBarMainActivity extends AppCompatActivity
     /**
      * to send intent to NavBarMainActivity
      */
-    public void sendIntentToLocationItemsActivity() {
-        Intent sendIntentToLocationItemsActivity = new Intent(NavBarMainActivity.this, NavBarMainActivity.class);
-        sendIntentToLocationItemsActivity.putExtra(CURRENT_CATEGORY, currentCategory);
-        startActivity(sendIntentToLocationItemsActivity);
+    public void sendIntentToNavBarMainActivity() {
+        Intent sendIntentToNavBarMainActivity = new Intent(NavBarMainActivity.this, NavBarMainActivity.class);
+        sendIntentToNavBarMainActivity.putExtra(CURRENT_CATEGORY, currentCategory);
+        startActivity(sendIntentToNavBarMainActivity);
     }
 }
