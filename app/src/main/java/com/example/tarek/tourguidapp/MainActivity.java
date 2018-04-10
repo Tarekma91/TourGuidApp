@@ -81,13 +81,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void setCategories() {
         categories = new ArrayList<>();
-        categories.add(new CategoryItem(getString(R.string.natural_places), R.drawable.icons8_field_48));
+
         categories.add(new CategoryItem(getString(R.string.historical_places), R.drawable.icons8_pyramids));
         categories.add(new CategoryItem(getString(R.string.museums), R.drawable.icons8_parliament_48));
-        categories.add(new CategoryItem(getString(R.string.restaurants), R.drawable.icons8_restaurant_building_48));
+        categories.add(new CategoryItem(getString(R.string.natural_places), R.drawable.icons8_field_48));
         categories.add(new CategoryItem(getString(R.string.islamics), R.drawable.icons8_mosque_48));
         categories.add(new CategoryItem(getString(R.string.copts), R.drawable.icons8_cathedral_48));
         categories.add(new CategoryItem(getString(R.string.beaches), R.drawable.icons8_beach_48));
+        categories.add(new CategoryItem(getString(R.string.restaurants), R.drawable.icons8_restaurant_building_48));
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.tarek.tourguidapp;
 
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -49,6 +50,36 @@ public class FragmentItemActivity extends Fragment {
 
         return rootView;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
+        savedInstanceState.putString("name", placeName);
+        savedInstanceState.putString("address", placeAddress);
+        savedInstanceState.putString("description", placeDescription);
+        savedInstanceState.putInt("image", placeImage);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            placeName = savedInstanceState.getString("name");
+            placeAddress = savedInstanceState.getString("address");
+            placeDescription = savedInstanceState.getString("description");
+            placeImage = savedInstanceState.getInt("image");
+        }
+    }
+
 
     public void setPlaceImage(int image) {
         this.placeImage = image;

@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,11 +37,11 @@ public class NavBarMainActivity extends AppCompatActivity
         setContentView(R.layout.activity_category_items);
         ButterKnife.bind(this);
 
-
         setNavBar();
         getComingIntents();
         getSupportActionBar().setTitle(currentCategory); // after get coming intent which have currentCategory
         buildRecycleView();
+
     }
 
 
@@ -53,9 +52,12 @@ public class NavBarMainActivity extends AppCompatActivity
     @Override
     protected void onPause() {
         super.onPause();
-        Toast.makeText(getBaseContext(), "onPause", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     @Override
     public void onBackPressed() {
