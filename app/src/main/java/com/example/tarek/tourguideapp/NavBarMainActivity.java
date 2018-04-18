@@ -1,4 +1,4 @@
-package com.example.tarek.tourguidapp;
+package com.example.tarek.tourguideapp;
 
 
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.tarek.tourguideapp.fragment.SimpleFragmentPagerAdapter;
+import com.example.tarek.tourguideapp.invitation.InvitationActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -150,6 +153,7 @@ public class NavBarMainActivity extends AppCompatActivity
      * to send intent to NavBarMainActivity
      */
     public void sendIntentToNavBarMainActivity() {
+        finish();
         Intent sendIntentToNavBarMainActivity = new Intent(NavBarMainActivity.this, NavBarMainActivity.class);
         sendIntentToNavBarMainActivity.putExtra(CURRENT_CATEGORY, currentCategory);
         startActivity(sendIntentToNavBarMainActivity);

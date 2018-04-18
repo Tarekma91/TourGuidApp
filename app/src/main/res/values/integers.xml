@@ -14,7 +14,6 @@
         <item>@drawable/temple_of_kom_ombo</item>
         <item>@drawable/memphis</item>
     </array>
-
     <array name="museums_images">
         <item>@drawable/egyptian_museum</item>
         <item>@drawable/cairoislamicmuseum</item>
@@ -23,13 +22,10 @@
         <item>@drawable/abdeen</item>
         <item>@drawable/agmuseum1</item>
     </array>
-
     <array name="restaurants_images">
         <item>@drawable/sequoia</item>
         <item>@drawable/taboula</item>
     </array>
-
-
     <array name="islamics_images">
         <item>@drawable/egypt_cairo_al_azhar_mosque</item>
         <item>@drawable/egypt_cairo_perfume_shop_in_khan_el_khalili</item>
@@ -39,14 +35,12 @@
         <item>@drawable/egypt_cairo_ibn_tulun_mosque</item>
         <item>@drawable/egypt_cairo_mosque_of_al_hakim</item>
     </array>
-
     <array name="copts_images">
         <item>@drawable/slide_coptic_cemetery_780x209</item>
         <item>@drawable/egypt_aswan_monastery_of_st_simeon_coptic</item>
         <item>@drawable/hanging_church</item>
         <item>@drawable/slide_coptic_cemetery_780x209</item>
     </array>
-
     <array name="beaches_images">
         <item>@drawable/marsa_alam_1635x915</item>
         <item>@drawable/matroh_1635x915</item>
@@ -58,7 +52,6 @@
         <item>@drawable/ras_shitan</item>
         <item>@drawable/island_of_the_pharoah</item>
     </array>
-
     <array name="natural_places_images">
         <item>@drawable/wadi_el_rayan</item>
         <item>@drawable/gabal_dakrour</item>
@@ -69,4 +62,69 @@
         <item>@drawable/whales_valley</item>
         <item>@drawable/colored_canyon</item>
     </array>
+
+
+    <array name="historical_sounds">
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+    </array>
+    <array name="museums_sounds">
+        <item>@raw/egyptian_museum</item>
+        <item>@raw/islamic_museum</item>
+        <item>@raw/coptic_museum</item>
+        <item>@raw/alexandria_museum</item>
+        <item>@raw/abdeen</item>
+        <item>@raw/agriculture_museum</item>
+    </array>
+    <array name="restaurants_sounds">
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+    </array>
+    <array name="islamics_sounds">
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+    </array>
+    <array name="copts_sounds">
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+    </array>
+    <array name="beaches_sounds">
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+    </array>
+    <array name="natural_places_sounds">
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+        <item>@raw/egypt_description_sound</item>
+    </array>
+
+
 </resources>

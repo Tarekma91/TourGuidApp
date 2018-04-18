@@ -1,4 +1,4 @@
-package com.example.tarek.tourguidapp;
+package com.example.tarek.tourguideapp;
 
 import org.junit.Test;
 

@@ -17,7 +17,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <!-- margin style for all app views // used beacuse I don't use it for all views like images else I should use Padding attribute on mainLayouts-->
+    <!-- margin style for all app views // used because I don't use it for all views like images else I should use Padding attribute on mainLayouts-->
     <style name="margin_style">
         <item name="android:layout_margin">@dimen/margin_value</item>
     </style>
@@ -31,9 +31,9 @@
     </style>
 
     <style name="image_style_land">
-        <item name="android:layout_width">@dimen/zero_value</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/zero_value</item>
+        <item name="android:layout_weight">4</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
 
@@ -51,7 +51,6 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textSize">@dimen/text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
     <!-- location number and name -->
@@ -60,23 +59,46 @@
         <item name="android:layout_height">@dimen/zero_value</item>
         <item name="android:textSize">@dimen/name_text_size</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">@dimen/margin_value</item>
     </style>
     <!-- address text style -->
-    <style name="address_text_style" parent="text_style">
+    <style name="address_text_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/zero_value</item>
         <item name="android:textSize">@dimen/address_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">@dimen/margin_value</item>
         <item name="android:drawableLeft">@drawable/icons8_marker_48</item>
     </style>
-    <!-- invitation activity text style-->
+
+    <!-- description text style-->
+    <style name="description_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/description_text_size</item>
+        <item name="android:paddingBottom">@dimen/margin_value</item>
+    </style>
+
+    <!-- Invitation activity text style-->
     <style name="invitation_text_style" parent="text_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/zero_value</item>
         <item name="android:layout_weight">2</item>
+        <item name="android:textSize">@dimen/invitation_text_size</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
-
+    <!--sound time text style-->
+    <style name="time_sound_text_style">
+        <item name="android:layout_width">@dimen/zero_value</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/time_sound_text_size</item>
+    </style>
 
     <!-- category_item_linear_layout_location_text-->
     <style name="linear_h_layout_location_style" parent="margin_style">
@@ -97,16 +119,16 @@
 
     <!-- category_item_text_description scrollview-->
     <style name="category_item_scroll_view_text_description_style" parent="margin_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/zero_value</item>
-        <item name="android:layout_weight">3</item>
+        <item name="android:layout_width">@dimen/zero_value</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">2</item>
         <item name="android:orientation">vertical</item>
     </style>
     <!-- vertical_layouts_style_category_item_land-->
     <style name="vertical_layouts_style_category_item_land" parent="margin_style">
         <item name="android:layout_width">@dimen/zero_value</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">2</item>
+        <item name="android:layout_weight">4</item>
         <item name="android:orientation">vertical</item>
     </style>
 

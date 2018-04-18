@@ -1,4 +1,4 @@
-package com.example.tarek.tourguidapp;
+package com.example.tarek.tourguideapp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.example.tarek.tourguideapp.categories.CategoriesData;
+import com.example.tarek.tourguideapp.categories.CategoryItem;
+import com.example.tarek.tourguideapp.categories.CategoryItemAdapter;
+import com.example.tarek.tourguideapp.invitation.InvitationActivity;
 
 import java.util.ArrayList;
 
@@ -80,15 +85,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setCategories() {
-        categories = new ArrayList<>();
-
-        categories.add(new CategoryItem(getString(R.string.historical_places), R.drawable.icons8_pyramids));
-        categories.add(new CategoryItem(getString(R.string.museums), R.drawable.icons8_parliament_48));
-        categories.add(new CategoryItem(getString(R.string.natural_places), R.drawable.icons8_field_48));
-        categories.add(new CategoryItem(getString(R.string.islamics), R.drawable.icons8_mosque_48));
-        categories.add(new CategoryItem(getString(R.string.copts), R.drawable.icons8_cathedral_48));
-        categories.add(new CategoryItem(getString(R.string.beaches), R.drawable.icons8_beach_48));
-        categories.add(new CategoryItem(getString(R.string.restaurants), R.drawable.icons8_restaurant_building_48));
+        this.categories = new CategoriesData(this).getCategories();
     }
-
 }

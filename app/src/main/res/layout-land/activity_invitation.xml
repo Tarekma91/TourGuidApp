@@ -8,9 +8,7 @@
     <ImageView
         android:id="@+id/image_invitation"
         style="@style/image_style"
-        android:layout_weight="3"
-        android:scaleType="center"
-        android:src="@drawable/icons8_people_528" />
+        android:scaleType="center" />
     <!-- description text -->
     <TextView
         android:id="@+id/text_invitation"

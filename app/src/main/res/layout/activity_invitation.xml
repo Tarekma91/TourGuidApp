@@ -7,9 +7,7 @@
     <!-- show invitation activity image-->
     <ImageView
         android:id="@+id/image_invitation"
-        style="@style/image_style"
-        android:layout_weight="4"
-        android:src="@drawable/icons8_people_528" />
+        style="@style/image_style" />
     <!-- description text -->
     <TextView
         android:id="@+id/text_invitation"

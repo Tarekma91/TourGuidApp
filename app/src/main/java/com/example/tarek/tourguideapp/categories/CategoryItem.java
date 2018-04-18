@@ -1,4 +1,4 @@
-package com.example.tarek.tourguidapp;
+package com.example.tarek.tourguideapp.categories;
 
 
 public class CategoryItem {

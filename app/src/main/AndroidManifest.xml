@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tarek.tourguidapp">
+    package="com.example.tarek.tourguideapp">
+
+    <!-- to keep screen from sleeping or dimming while using this app -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -12,7 +15,6 @@
         <activity
             android:name=".NavBarMainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
         <activity
             android:name=".MainActivity"
@@ -24,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InvitationActivity"
+            android:name=".invitation.InvitationActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/invitation_activity"></activity>
 

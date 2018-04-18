@@ -10,9 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_value"
-        android:backgroundTint="@color/app_background"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:backgroundTint="@color/app_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@android:drawable/ic_menu_share" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,12 +25,14 @@
         <ImageView
             android:id="@+id/image_main"
             style="@style/image_style_land"
-            android:src="@drawable/ic_launcher_background" />
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
 
         <!--  list view for categories -->
         <ListView
             android:id="@+id/list_view_main"
-            android:layout_width="@dimen/zero_value"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_value"
             android:layout_weight="2">
