@@ -1,10 +1,11 @@
-package com.example.tarek.tourguideapp.fragment;
+package com.example.tarek.tourguideapp.adapters;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.tarek.tourguideapp.fragment.FragmentItem;
 import com.example.tarek.tourguideapp.locations.Location;
 import com.example.tarek.tourguideapp.locations.LocationsData;
 
@@ -27,12 +28,11 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
         Location location;
         location = locationsData.get(position);
-        FragmentItemActivity fragmentItem;
+        FragmentItem fragmentItem;
 
-        fragmentItem = new FragmentItemActivity(); // because Fragment need new object each time
+        fragmentItem = new FragmentItem(); // because Fragment need new object each time
         String title = ++position + "/" + count + "\t\t\t";
         fragmentItem.setLocation(location, title);
         return fragmentItem;

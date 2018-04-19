@@ -27,7 +27,7 @@ import butterknife.OnClick;
 // TODO: to stop media player if the user moved to next page || it stops if the user moved to 3rd page !
 // TODO: create a separated class for MediaPlayer
 
-public class FragmentItemActivity extends Fragment {
+public class FragmentItem extends Fragment implements FragmentLifeCycle {
 
     private final String LOCATION = "LOCATION";
     private final String NUMBER_OF_PAGE = "NUMBER_OF_PAGE";
@@ -68,7 +68,7 @@ public class FragmentItemActivity extends Fragment {
     };
 
 
-    public FragmentItemActivity() {
+    public FragmentItem() {
 
     }
 
@@ -240,8 +240,8 @@ public class FragmentItemActivity extends Fragment {
             if (mediaPlayer.isPlaying()) stopSound();
             mediaPlayer.release();
             mediaPlayer = null;
+            audioManager.abandonAudioFocus(onAudioFocusChangeListener);
         }
-        audioManager.abandonAudioFocus(onAudioFocusChangeListener);
     }
 
     /**
@@ -289,4 +289,13 @@ public class FragmentItemActivity extends Fragment {
         }
     }
 
+    @Override
+    public void onPauseFragment() {
+        releaseMediaPlayer(); // release when pause
+    }
+
+    @Override
+    public void onResumeFragment() {
+        releaseMediaPlayer(); // release when resume
+    }
 }

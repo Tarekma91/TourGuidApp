@@ -13,12 +13,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.tarek.tourguideapp.fragment.SimpleFragmentPagerAdapter;
+import com.example.tarek.tourguideapp.adapters.SimpleFragmentPagerAdapter;
+import com.example.tarek.tourguideapp.fragment.FragmentLifeCycle;
 import com.example.tarek.tourguideapp.invitation.InvitationActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
+// NAV BAR Main Activity & VIEW PAGER
 public class NavBarMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -32,6 +35,7 @@ public class NavBarMainActivity extends AppCompatActivity
     @BindView(R.id.nav_view)
     NavigationView navigationView;
     private String currentCategory;
+    private final int ZERO = 0;
 
 
     @Override
@@ -48,10 +52,6 @@ public class NavBarMainActivity extends AppCompatActivity
     }
 
 
-    /**
-     * to destroy the activity if switched to another one (onPause state) because if screen rotated there is no data
-     * but now if rotated it go back to main activity
-     */
     @Override
     protected void onPause() {
         super.onPause();
@@ -129,8 +129,31 @@ public class NavBarMainActivity extends AppCompatActivity
      * to build recycle view : set FragmentPagerAdapter object and the set it to viewpager
      */
     public void buildRecycleView() {
-        SimpleFragmentPagerAdapter simpleFragmentPagerAdapter = new SimpleFragmentPagerAdapter(this, getSupportFragmentManager(), currentCategory);
-        viewPager.setAdapter(simpleFragmentPagerAdapter);
+        final SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(this, getSupportFragmentManager(), currentCategory);
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            int currentPosition = ZERO;
+
+            @Override
+            public void onPageSelected(int newPosition) {
+
+                FragmentLifeCycle fragmentToHide = (FragmentLifeCycle) adapter.getItem(currentPosition);
+                fragmentToHide.onPauseFragment();
+
+                FragmentLifeCycle fragmentToShow = (FragmentLifeCycle) adapter.getItem(newPosition);
+                fragmentToShow.onResumeFragment();
+                currentPosition = newPosition;
+            }
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
     }
 
     /**

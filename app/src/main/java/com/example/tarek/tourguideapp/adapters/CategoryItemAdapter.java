@@ -1,4 +1,4 @@
-package com.example.tarek.tourguideapp.categories;
+package com.example.tarek.tourguideapp.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.tarek.tourguideapp.R;
+import com.example.tarek.tourguideapp.categories.CategoryItem;
 
 import java.util.ArrayList;
 

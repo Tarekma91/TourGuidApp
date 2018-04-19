@@ -9,9 +9,9 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.tarek.tourguideapp.adapters.CategoryItemAdapter;
 import com.example.tarek.tourguideapp.categories.CategoriesData;
 import com.example.tarek.tourguideapp.categories.CategoryItem;
-import com.example.tarek.tourguideapp.categories.CategoryItemAdapter;
 import com.example.tarek.tourguideapp.invitation.InvitationActivity;
 
 import java.util.ArrayList;
