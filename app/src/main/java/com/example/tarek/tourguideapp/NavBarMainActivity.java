@@ -26,13 +26,13 @@ public class NavBarMainActivity extends AppCompatActivity
 
     private final String CURRENT_CATEGORY = "currentCategory";
     @BindView(R.id.view_pager_items)
-    private ViewPager viewPager;
+    ViewPager viewPager;
     @BindView((R.id.toolbar))
-    private Toolbar toolbar;
+    Toolbar toolbar;
     @BindView(R.id.drawer_layout)
-    private DrawerLayout drawer;
+    DrawerLayout drawer;
     @BindView(R.id.nav_view)
-    private NavigationView navigationView;
+    NavigationView navigationView;
     private String currentCategory;
 
 

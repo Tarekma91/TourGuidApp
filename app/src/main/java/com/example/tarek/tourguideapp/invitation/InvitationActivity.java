@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tarek.tourguideapp.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -15,9 +17,9 @@ public class InvitationActivity extends AppCompatActivity {
 
 
     @BindView(R.id.text_invitation)
-    private TextView textInvitation;
+    TextView textInvitation;
     @BindView(R.id.image_invitation)
-    private ImageView imageInvitation;
+    ImageView imageInvitation;
 
     private InvitationData data;
 

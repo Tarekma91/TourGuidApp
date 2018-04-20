@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     @BindView(R.id.image_main)
-    private ImageView mainImage;
+    ImageView mainImage;
     @BindView(R.id.list_view_main)
-    private ListView listCategories;
+    ListView listCategories;
 
     private ArrayList<CategoryItem> categories;
     private String currentCategory;

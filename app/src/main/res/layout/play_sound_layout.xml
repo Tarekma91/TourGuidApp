@@ -33,5 +33,5 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:src="@drawable/ic_play_circle_outline_black_48dp"
-        android:tag="@string/tag1_play_sound_icon" />
+        android:tag="@string/tag2_play_sound_icon" />
 </LinearLayout>

@@ -3,6 +3,8 @@ package com.example.tarek.tourguideapp.locations;
 import android.content.Context;
 import android.content.res.TypedArray;
 
+import com.example.tarek.tourguideapp.R;
+
 import java.util.ArrayList;
 
 public class LocationsData {

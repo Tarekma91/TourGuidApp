@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.tarek.tourguideapp.R;
 import com.example.tarek.tourguideapp.locations.Location;
 
 import java.util.concurrent.TimeUnit;
@@ -35,17 +36,21 @@ public class FragmentItem extends Fragment {
     private final int HUNDRED = 100;
     private final Handler handler = new Handler();
     @BindView(R.id.category_item_image)
-    private ImageView locationImage;
+    ImageView locationImage;
     @BindView(R.id.location_name)
-    private TextView locationName;
+    TextView locationName;
     @BindView(R.id.location_address)
-    private TextView locationAddress;
+    TextView locationAddress;
     @BindView(R.id.category_item_text_description)
-    private TextView locationDescription;
+    TextView locationDescription;
     @BindView(R.id.id_seekbar)
-    private SeekBar seekBar;
+    SeekBar seekBar;
     @BindView(R.id.elapsed_time)
-    private TextView elapsedTimeTV;
+    TextView elapsedTimeTV;
+    @BindView(R.id.full_time)
+    TextView fullTimeTV;
+    @BindView(R.id.play_sound_icon)
+    ImageView playSoundIcon;
     private final Runnable updateSongTime = new Runnable() {
         @Override
         public void run() {
@@ -55,14 +60,11 @@ public class FragmentItem extends Fragment {
             }
         }
     };
-    @BindView(R.id.full_time)
-    private TextView fullTimeTV;
+
     private String numberOfPage;
     private Location currentLocation;
     private MediaPlayer mediaPlayer;
     private double currentPosition;
-    @BindView(R.id.play_sound_icon)
-    private ImageView playSoundIcon;
     private AudioManager audioManager;
     private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener;
 
@@ -132,8 +134,8 @@ public class FragmentItem extends Fragment {
     @OnClick(R.id.play_sound_icon)
     public void OnClickPlayIcon() {
         String tag = playSoundIcon.getTag().toString();
-        if (tag.equals(getString(R.string.tag1_play_sound_icon))) {
-            playSoundIcon.setTag(getString(R.string.tag2_play_sound_icon));
+        if (tag.equals(getString(R.string.tag2_play_sound_icon))) {
+            playSoundIcon.setTag(getString(R.string.tag1_play_sound_icon));
             playSoundIcon.setImageResource(R.drawable.ic_pause_circle_outline_black_48dp);
             if (mediaPlayer == null) {
                 // in case sound  finished then MediaPlayer released and = null : set it again
@@ -145,7 +147,7 @@ public class FragmentItem extends Fragment {
             }
             playSoundIfAudioFocusRequestGranted();
         } else {
-            playSoundIcon.setTag(getString(R.string.tag1_play_sound_icon));
+            playSoundIcon.setTag(getString(R.string.tag2_play_sound_icon));
             playSoundIcon.setImageResource(R.drawable.ic_play_circle_outline_black_48dp);
             if (mediaPlayer != null)
                 pauseSound(); // in case sound finished then MediaPlayer released and = null
@@ -302,6 +304,8 @@ public class FragmentItem extends Fragment {
             // If we are becoming invisible, then...
             if (!isVisibleToUser) {
                 releaseMediaPlayer();
+                playSoundIcon.setImageResource(R.drawable.ic_play_circle_outline_black_48dp);
+                playSoundIcon.setTag(R.string.tag1_play_sound_icon);
             }
         }
     }

@@ -2,6 +2,8 @@ package com.example.tarek.tourguideapp.invitation;
 
 import android.content.Context;
 
+import com.example.tarek.tourguideapp.R;
+
 
 public class InvitationData {
     private Context context;
