@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.example.tarek.tourguideapp.R;
 import com.example.tarek.tourguideapp.locations.Location;
 
 import java.util.concurrent.TimeUnit;
@@ -24,40 +23,30 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-// TODO: to stop media player if the user moved to next page || it stops if the user moved to 3rd page !
+
 // TODO: create a separated class for MediaPlayer
 
-public class FragmentItem extends Fragment implements FragmentLifeCycle {
+public class FragmentItem extends Fragment {
 
     private final String LOCATION = "LOCATION";
     private final String NUMBER_OF_PAGE = "NUMBER_OF_PAGE";
     private final String PROGRESS = "PROGRESS";
     private final int ZERO = 0;
     private final int HUNDRED = 100;
+    private final Handler handler = new Handler();
     @BindView(R.id.category_item_image)
-    ImageView locationImage;
+    private ImageView locationImage;
     @BindView(R.id.location_name)
-    TextView locationName;
+    private TextView locationName;
     @BindView(R.id.location_address)
-    TextView locationAddress;
+    private TextView locationAddress;
     @BindView(R.id.category_item_text_description)
-    TextView locationDescription;
+    private TextView locationDescription;
     @BindView(R.id.id_seekbar)
-    SeekBar seekBar;
+    private SeekBar seekBar;
     @BindView(R.id.elapsed_time)
-    TextView elapsedTimeTV;
-    @BindView(R.id.full_time)
-    TextView fullTimeTV;
-    @BindView(R.id.play_sound_icon)
-    ImageView playSoundIcon;
-    AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener;
-    private String numberOfPage;
-    private Location currentLocation;
-    private MediaPlayer mediaPlayer;
-    private double currentPosition;
-    private Handler handler = new Handler();
-    private AudioManager audioManager;
-    private Runnable updateSongTime = new Runnable() {
+    private TextView elapsedTimeTV;
+    private final Runnable updateSongTime = new Runnable() {
         @Override
         public void run() {
             if (mediaPlayer != null) {
@@ -66,6 +55,16 @@ public class FragmentItem extends Fragment implements FragmentLifeCycle {
             }
         }
     };
+    @BindView(R.id.full_time)
+    private TextView fullTimeTV;
+    private String numberOfPage;
+    private Location currentLocation;
+    private MediaPlayer mediaPlayer;
+    private double currentPosition;
+    @BindView(R.id.play_sound_icon)
+    private ImageView playSoundIcon;
+    private AudioManager audioManager;
+    private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener;
 
 
     public FragmentItem() {
@@ -269,7 +268,7 @@ public class FragmentItem extends Fragment implements FragmentLifeCycle {
                                 focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
                             pauseSound();// we loss the audio focus temporarily so pause mediaplayer
                         } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                            releaseMediaPlayer(); // we loss the audio focus permanently so stop and releas mediaplayer
+                            releaseMediaPlayer(); // we loss the audio focus permanently so stop and release mediaplayer
                         } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
                             playSound(); // we have the audio focus so resume playing
                         }
@@ -289,13 +288,21 @@ public class FragmentItem extends Fragment implements FragmentLifeCycle {
         }
     }
 
+    /**
+     * to release media player if the fragment isn't visible to the user (he moved to next page)
+     *
+     * @param isVisibleToUser boolean to get true or false
+     */
     @Override
-    public void onPauseFragment() {
-        releaseMediaPlayer(); // release when pause
-    }
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
 
-    @Override
-    public void onResumeFragment() {
-        releaseMediaPlayer(); // release when resume
+        // Make sure that we are currently visible
+        if (this.isVisible()) {
+            // If we are becoming invisible, then...
+            if (!isVisibleToUser) {
+                releaseMediaPlayer();
+            }
+        }
     }
 }

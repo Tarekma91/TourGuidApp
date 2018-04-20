@@ -7,31 +7,24 @@
 
 
         <item
-            android:id="@+id/nav_natural_places"
             android:icon="@drawable/icons8_field_48"
             android:title="@string/natural_places" />
         <item
-            android:id="@+id/nav_historic_places"
             android:icon="@drawable/icons8_pyramids"
             android:title="@string/historical_places" />
         <item
-            android:id="@+id/nav_museums"
             android:icon="@drawable/icons8_parliament_48"
             android:title="@string/museums" />
         <item
-            android:id="@+id/nav_restaurants"
             android:icon="@drawable/icons8_restaurant_building_48"
             android:title="@string/restaurants" />
         <item
-            android:id="@+id/nav_mosques"
             android:icon="@drawable/icons8_mosque_48"
             android:title="@string/islamics" />
         <item
-            android:id="@+id/nav_churches"
             android:icon="@drawable/icons8_cathedral_48"
             android:title="@string/copts" />
         <item
-            android:id="@+id/nav_beaches"
             android:icon="@drawable/icons8_beach_48"
             android:title="@string/beaches" />
 

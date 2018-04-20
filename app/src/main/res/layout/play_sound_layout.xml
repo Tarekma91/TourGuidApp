@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="5"
-        android:clickable="true" />
+        android:clickable="true"
+        android:focusable="true" />
 
 
     <TextView

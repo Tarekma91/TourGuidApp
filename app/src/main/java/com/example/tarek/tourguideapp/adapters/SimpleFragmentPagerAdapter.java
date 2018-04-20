@@ -43,7 +43,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
         return count;
     }
 
-    public void setLocationsData() {
+    private void setLocationsData() {
         locationsData = new LocationsData(context, currentCategory).getLocations();
     }
 

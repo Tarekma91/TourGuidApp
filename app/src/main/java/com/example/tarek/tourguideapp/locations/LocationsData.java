@@ -3,13 +3,10 @@ package com.example.tarek.tourguideapp.locations;
 import android.content.Context;
 import android.content.res.TypedArray;
 
-import com.example.tarek.tourguideapp.R;
-
 import java.util.ArrayList;
 
 public class LocationsData {
 
-    private final int DEFAULT_INT_VALUE = -1;
     private ArrayList<Location> locations;
     private Context context;
     private String currentCategory;
@@ -85,6 +82,7 @@ public class LocationsData {
         String[] descriptions = context.getResources().getStringArray(descriptionResource);
         final TypedArray images = context.getResources().obtainTypedArray(imagesResources);
         final TypedArray sounds = context.getResources().obtainTypedArray(soundResource);
+        int DEFAULT_INT_VALUE = -1;
         for (int i = 0; i < names.length; i++) {
             locations.add(new Location(
                     names[i],

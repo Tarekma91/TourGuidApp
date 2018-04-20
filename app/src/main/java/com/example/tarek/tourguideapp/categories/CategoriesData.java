@@ -2,8 +2,6 @@ package com.example.tarek.tourguideapp.categories;
 
 import android.content.Context;
 
-import com.example.tarek.tourguideapp.R;
-
 import java.util.ArrayList;
 
 public class CategoriesData {

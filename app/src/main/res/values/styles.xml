@@ -101,12 +101,6 @@
     </style>
 
     <!-- category_item_linear_layout_location_text-->
-    <style name="linear_h_layout_location_style" parent="margin_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/zero_value</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
 
     <style name="linear_h_layout_share_icons_style" parent="margin_style">
         <item name="android:layout_width">wrap_content</item>

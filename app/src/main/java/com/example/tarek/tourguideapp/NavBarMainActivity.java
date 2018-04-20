@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.tarek.tourguideapp.adapters.SimpleFragmentPagerAdapter;
-import com.example.tarek.tourguideapp.fragment.FragmentLifeCycle;
 import com.example.tarek.tourguideapp.invitation.InvitationActivity;
 
 import butterknife.BindView;
@@ -27,15 +26,14 @@ public class NavBarMainActivity extends AppCompatActivity
 
     private final String CURRENT_CATEGORY = "currentCategory";
     @BindView(R.id.view_pager_items)
-    ViewPager viewPager;
+    private ViewPager viewPager;
     @BindView((R.id.toolbar))
-    Toolbar toolbar;
+    private Toolbar toolbar;
     @BindView(R.id.drawer_layout)
-    DrawerLayout drawer;
+    private DrawerLayout drawer;
     @BindView(R.id.nav_view)
-    NavigationView navigationView;
+    private NavigationView navigationView;
     private String currentCategory;
-    private final int ZERO = 0;
 
 
     @Override
@@ -49,17 +47,6 @@ public class NavBarMainActivity extends AppCompatActivity
         getSupportActionBar().setTitle(currentCategory); // after get coming intent which have currentCategory
         buildRecycleView();
 
-    }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 
     @Override
@@ -131,29 +118,7 @@ public class NavBarMainActivity extends AppCompatActivity
     public void buildRecycleView() {
         final SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(this, getSupportFragmentManager(), currentCategory);
         viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            int currentPosition = ZERO;
 
-            @Override
-            public void onPageSelected(int newPosition) {
-
-                FragmentLifeCycle fragmentToHide = (FragmentLifeCycle) adapter.getItem(currentPosition);
-                fragmentToHide.onPauseFragment();
-
-                FragmentLifeCycle fragmentToShow = (FragmentLifeCycle) adapter.getItem(newPosition);
-                fragmentToShow.onResumeFragment();
-                currentPosition = newPosition;
-            }
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
     }
 
     /**

@@ -7,8 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tarek.tourguideapp.R;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -17,9 +15,9 @@ public class InvitationActivity extends AppCompatActivity {
 
 
     @BindView(R.id.text_invitation)
-    TextView textInvitation;
+    private TextView textInvitation;
     @BindView(R.id.image_invitation)
-    ImageView imageInvitation;
+    private ImageView imageInvitation;
 
     private InvitationData data;
 
@@ -49,7 +47,7 @@ public class InvitationActivity extends AppCompatActivity {
         toastInvitationMsg(data.getShareViaGmail());
     }
 
-    public void toastInvitationMsg(String msg) {
+    private void toastInvitationMsg(String msg) {
         Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
