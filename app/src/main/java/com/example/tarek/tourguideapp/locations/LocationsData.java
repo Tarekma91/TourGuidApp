@@ -84,7 +84,7 @@ public class LocationsData {
         String[] descriptions = context.getResources().getStringArray(descriptionResource);
         final TypedArray images = context.getResources().obtainTypedArray(imagesResources);
         final TypedArray sounds = context.getResources().obtainTypedArray(soundResource);
-        int DEFAULT_INT_VALUE = -1;
+        final int DEFAULT_INT_VALUE = -1;
         for (int i = 0; i < names.length; i++) {
             locations.add(new Location(
                     names[i],

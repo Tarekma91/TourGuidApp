@@ -134,9 +134,8 @@ public class FragmentItem extends Fragment {
     @OnClick(R.id.play_sound_icon)
     public void OnClickPlayIcon() {
         String tag = playSoundIcon.getTag().toString();
-        if (tag.equals(getString(R.string.tag2_play_sound_icon))) {
-            playSoundIcon.setTag(getString(R.string.tag1_play_sound_icon));
-            playSoundIcon.setImageResource(R.drawable.ic_pause_circle_outline_black_48dp);
+        if (tag.equals(getString(R.string.tag1_play_sound_icon))) {
+            changePlayIconToPause();
             if (mediaPlayer == null) {
                 // in case sound  finished then MediaPlayer released and = null : set it again
                 setMediaPlayer();
@@ -147,11 +146,26 @@ public class FragmentItem extends Fragment {
             }
             playSoundIfAudioFocusRequestGranted();
         } else {
-            playSoundIcon.setTag(getString(R.string.tag2_play_sound_icon));
-            playSoundIcon.setImageResource(R.drawable.ic_play_circle_outline_black_48dp);
+            changePlayIconToPlay();
             if (mediaPlayer != null)
                 pauseSound(); // in case sound finished then MediaPlayer released and = null
         }
+    }
+
+    /**
+     * to change play Icon tag to "click to pause" and image to pause
+     */
+    private void changePlayIconToPause() {
+        playSoundIcon.setTag(getString(R.string.tag2_play_sound_icon));
+        playSoundIcon.setImageResource(R.drawable.ic_pause_circle_outline_black_48dp);
+    }
+
+    /**
+     * to change play Icon tag to "click to play" and image to play
+     */
+    private void changePlayIconToPlay() {
+        playSoundIcon.setTag(getString(R.string.tag1_play_sound_icon));
+        playSoundIcon.setImageResource(R.drawable.ic_play_circle_outline_black_48dp);
     }
 
     public void setMediaPlayer() {
@@ -160,8 +174,7 @@ public class FragmentItem extends Fragment {
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
-                    playSoundIcon.setTag(getString(R.string.tag1_play_sound_icon));
-                    playSoundIcon.setImageResource(R.drawable.ic_play_circle_outline_black_48dp);
+                    changePlayIconToPlay();
                     setSeekBarPosition(ZERO);
                     releaseMediaPlayer();
                 }
@@ -304,8 +317,7 @@ public class FragmentItem extends Fragment {
             // If we are becoming invisible, then...
             if (!isVisibleToUser) {
                 releaseMediaPlayer();
-                playSoundIcon.setImageResource(R.drawable.ic_play_circle_outline_black_48dp);
-                playSoundIcon.setTag(R.string.tag1_play_sound_icon);
+                changePlayIconToPlay();
             }
         }
     }
